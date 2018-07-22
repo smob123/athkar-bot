@@ -1,0 +1,16 @@
+{
+  "name": "athkar-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tweetBot.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sultan",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.1.2",
+    "twit": "^2.2.11"
+  }
+}
