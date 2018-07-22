@@ -4,6 +4,7 @@ try {
     bot.generateTweet();
 }
 catch(err) {
-    console.log('an error has occured exiting application');
+    console.log('an error has occured. \n\
+                Exiting application...');
     exit(1);
 }

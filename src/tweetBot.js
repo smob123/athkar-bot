@@ -25,10 +25,6 @@ async function generateTweet() {
 function shareTweet(status) {
     T.post('statuses/update', {status: status}, 
     function (err, data, response) {});
-
-    setTimeout(function () {
-        generateTweet();
-    }, 1000 * 60 * 60);
 }
 
 module.exports = {generateTweet};
