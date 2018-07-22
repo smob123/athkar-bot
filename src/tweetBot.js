@@ -28,7 +28,7 @@ function shareTweet(status) {
 
     setTimeout(function () {
         generateTweet();
-    }, 1000 * 60 * 60 * 3);
+    }, 1000 * 60 * 60);
 }
 
 module.exports = {generateTweet};
