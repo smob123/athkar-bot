@@ -6,5 +6,5 @@ try {
 catch(err) {
     console.log('an error has occured. \n\
                 Exiting application...');
-    exit(1);
+    process.exit(1);
 }
