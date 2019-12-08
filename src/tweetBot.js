@@ -13,7 +13,7 @@ generateTweet = async () => {
     let i = Math.floor(Math.random() * t.content.length);
 
     //choose a tweet at the random index
-    status = t.content[i].zekr + '\n\n';
+    status = t.content[i].zekr + '\n \n';
 
     //get trending hashtags
     const trendingHashtags = await hashtags();
@@ -21,7 +21,7 @@ generateTweet = async () => {
     // keep adding hashtags to the twweet until the length of the text goes above 280 characters
     for (let i = 0; i < trendingHashtags.length; i++) {
         // add a new hashtag to the text
-        const s = `${status} ${trendingHashtags[i]}`;
+        const s = `${status} ${trendingHashtags[i]} `;
         // break the loop if the tweet's length is above 280
         if (s.length > 280) {
             break;
@@ -31,14 +31,8 @@ generateTweet = async () => {
         status = s;
     }
 
-    //if the tweet's length is more than 280 characters
-    if (status.length > 280) {
-        //generate another tweet
-        generateTweet();
-    } else {
-        //share the tweet
-        shareTweet(status);
-    }
+    //share the tweet
+    shareTweet(status);
 }
 
 shareTweet = (status) => {
