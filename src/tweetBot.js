@@ -3,7 +3,6 @@ const config = require('./assets/config');
 const hashtags = require('./assets/hashtags');
 const tweet = require('./tweets');
 
-
 let T = new Twit(config);
 
 //generate a random tweet
@@ -16,9 +15,20 @@ generateTweet = async () => {
     //choose a tweet at the random index
     status = t.content[i].zekr + '\n';
 
-    //add hashtags
-    for (let i = 0; i < hashtags.data.length; i++) {
-        status += hashtags.data[i] + ' ';
+    //get trending hashtags
+    const trendingHashtags = await hashtags();
+
+    // keep adding hashtags to the twweet until the length of the text goes above 280 characters
+    for (let i = 0; i < trendingHashtags.length; i++) {
+        // add a new hashtag to the text
+        const s = `${status} ${trendingHashtags[i]}`;
+        // break the loop if the tweet's length is above 280
+        if (s.length > 280) {
+            break;
+        }
+
+        // otherwise apply the change to status
+        status = s;
     }
 
     //if the tweet's length is more than 280 characters
