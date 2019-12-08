@@ -13,7 +13,7 @@ generateTweet = async () => {
     let i = Math.floor(Math.random() * t.content.length);
 
     //choose a tweet at the random index
-    status = t.content[i].zekr + '\n';
+    status = t.content[i].zekr + '\n\n';
 
     //get trending hashtags
     const trendingHashtags = await hashtags();
